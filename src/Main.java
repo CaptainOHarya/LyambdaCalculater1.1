@@ -1,13 +1,15 @@
-
 public class Main {
 
 	public static void main(String[] args) {
 		Calculator calc = Calculator.instance.get();
 
-// Математические операции
+// РњР°С‚РµРјР°С‚РёС‡РµСЃРєРёРµ РѕРїРµСЂР°С†РёРё
+		System.out.println();
 		int a = calc.plus.apply(2, 2);
-		int b = calc.minus.apply(2, 1);
-		int c = calc.devide.apply(a, b);// Если b будет 0, то возникает ошибка деления на ноль
+		int b = calc.minus.apply(1, 1);
+		int c = calc.devide.apply(a, b);// Р•СЃР»Рё b Р±СѓРґРµС‚ 0, С‚Рѕ РІРѕР·РЅРёРєР°РµС‚ РѕС€РёР±РєР° РґРµР»РµРЅРёСЏ РЅР° РЅРѕР»СЊ
+		if (b == 0)
+			System.err.println("РћР±РЅР°СЂСѓР¶РµРЅРѕ РґРµР»РµРЅРёРµ РЅР° РЅРѕР»СЊ, РѕРїРµСЂР°С†РёСЏ РґРµР»РµРЅРёРµ РЅРµ РІС‹РїРѕР»РЅРµРЅР°");
 
 		int d = calc.pow.apply(a);
 		int e = -d;

@@ -6,21 +6,23 @@ import java.util.function.UnaryOperator;
 
 public class Calculator {
 	static Supplier<Calculator> instance = Calculator::new;
+	// Р­С‚Рѕ СЃСЃС‹Р»РєР° РЅР° РІС‹Р·РѕРІ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР°
 
-	// Математические операции над двумя числами
+	// РњР°С‚РµРјР°С‚РёС‡РµСЃРєРёРµ РѕРїРµСЂР°С†РёРё РЅР°Рґ РґРІСѓРјСЏ С‡РёСЃР»Р°РјРё
 	BinaryOperator<Integer> plus = (x, y) -> x + y;
 	BinaryOperator<Integer> minus = (x, y) -> x - y;
 	BinaryOperator<Integer> multiplay = (x, y) -> x * y;
-	BinaryOperator<Integer> devide = (x, y) -> x / y;
+	BinaryOperator<Integer> devide = (x, y) -> y == 0 ? 0 : x / y;
 
-	// Математические операции над одним числом
+	// РњР°С‚РµРјР°С‚РёС‡РµСЃРєРёРµ РѕРїРµСЂР°С†РёРё РЅР°Рґ РѕРґРЅРёРј С‡РёСЃР»РѕРј
 	UnaryOperator<Integer> pow = x -> x * x;
 	UnaryOperator<Integer> abs = x -> x > 0 ? x : x * -1;
 
-	// Использование интерфейса Predicate
-	// положительно ли число и проверка чётности
+	// РСЃРїРѕР»СЊР·РѕРІР°РЅРёРµ РёРЅС‚РµСЂС„РµР№СЃР° Predicate
+	// РїРѕР»РѕР¶РёС‚РµР»СЊРЅРѕ Р»Рё С‡РёСЃР»Рѕ Рё РїСЂРѕРІРµСЂРєР° С‡С‘С‚РЅРѕСЃС‚Рё
 	Predicate<Integer> isPositive = x -> x > 0;
 	Predicate<Integer> isEvenNumber = x -> x % 2 == 0;
 
 	Consumer<Integer> println = System.out::println;
+	// РњРѕР¶РЅРѕ Р·Р°РїРёСЃР°С‚СЊ РІРјРµСЃС‚Рѕ p -> System.out.println(p)
 }
